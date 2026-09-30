@@ -30,6 +30,15 @@ Domain modules remain independently importable so applications can combine
 topology, protection, telemetry, restoration, reliability, planning, and field
 operations without depending on a web framework or database.
 
+### Dynamic line capacity
+
+`relaygrid.conductors.dynamic_rating` converts conductor parameters, ambient
+temperature, wind speed, solar heating, and current loading into a time-limited
+available capacity. Missing, invalid, or expired weather evidence falls back to
+the conductor's static ampacity. Batch results identify each derating cause;
+calculations are returned as separate capacity records and never overwrite the
+catalog's static equipment rating.
+
 ## License
 
 RelayGrid is released under the MIT License.

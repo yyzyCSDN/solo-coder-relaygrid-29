@@ -6,11 +6,13 @@ class Conductor:
     r_ohm_km: float
     x_ohm_km: float
     ampacity_a: float
+    diameter_mm: float = 18.0
+    max_temp_c: float = 75.0
 CATALOG={
-    "ACSR_1_0": Conductor("ACSR_1_0",0.321,0.402,230),
-    "ACSR_4_0": Conductor("ACSR_4_0",0.198,0.384,340),
-    "AAAC_336": Conductor("AAAC_336",0.161,0.372,420),
-    "CU_500": Conductor("CU_500",0.128,0.355,510),
+    "ACSR_1_0": Conductor("ACSR_1_0",0.321,0.402,230,10.1,75.0),
+    "ACSR_4_0": Conductor("ACSR_4_0",0.198,0.384,340,14.3,75.0),
+    "AAAC_336": Conductor("AAAC_336",0.161,0.372,420,18.3,75.0),
+    "CU_500": Conductor("CU_500",0.128,0.355,510,19.5,75.0),
 }
 def get(code: str): return CATALOG[code]
 def parallel_impedance(code: str,length_km: float,circuits: int=1):
